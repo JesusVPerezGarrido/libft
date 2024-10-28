@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 17:36:26 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/28 18:46:05 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
+
+typedef enum e_bool
+{
+	false,
+	true,
+}	t_bool;
 
 //= Character Functions =//
 
