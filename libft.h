@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 17:09:09 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/28 17:36:26 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,6 +358,13 @@ int		ft_atoi(const char *nptr);
  * @returns String picturing the provided number.
  */
 char	*ft_itoa(int n);
+
+/*
+ * Converts a linked list into an array.
+ * @param[in] lst Pointer to the node from which to start.
+ * @returns Array of pointers to the contents of the list.
+ */
+void	**ft_lsttoarr(t_list *lst);
 
 //= LINKED LISTS =//
 

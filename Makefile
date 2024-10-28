@@ -48,7 +48,8 @@ SRCS = ft_atoi.c \
  ft_freejoin.c \
  ft_charcount.c \
  ft_highest.c \
- ft_lowest.c
+ ft_lowest.c \
+ ft_lsttoar.c
 
 BONUS = ft_lstadd_back.c \
  ft_lstdelone.c \
