@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstnextsize.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 15:11:40 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:02:22 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/10/30 11:02:42 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/10/30 11:03:30 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstnextsize(t_list *lst)
 {
 	int	value;
 
 	if (!lst)
 		return (0);
-	while (lst->prev)
-	{
-		lst = lst->prev;
-	}
 	value = 1;
 	while (lst->next)
 	{

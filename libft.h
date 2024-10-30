@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/28 18:46:05 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:05:10 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -397,11 +397,25 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 /*
- * Gets the size of the list from the node given.
+ * Gets the full size of the list from the node given.
  * @param[in] lst Node of the list.
  * @returns number of nodes in the list.
  */
 int		ft_lstsize(t_list *lst);
+
+/*
+ * Gets the next side size of the list from the node given.
+ * @param[in] lst Node of the list.
+ * @returns number of nodes in the list.
+ */
+int		ft_lstnextsize(t_list *lst);
+
+/*
+ * Gets the prev side size of the list from the node given.
+ * @param[in] lst Node of the list.
+ * @returns number of nodes in the list.
+ */
+int		ft_lstprevsize(t_list *lst);
 
 /*
  * Gets the last node in the list.
