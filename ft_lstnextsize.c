@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:02:42 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:03:30 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:25:00 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_lstnextsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-	value = 1;
+	value = 0;
 	while (lst->next)
 	{
 		value++;

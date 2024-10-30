@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:16:55 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:16:56 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:25:09 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_lstprevsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-	value = 1;
+	value = 0;
 	while (lst->prev)
 	{
 		value++;
