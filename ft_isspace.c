@@ -6,13 +6,13 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 17:05:47 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/25 17:08:47 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:17:02 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isspace(int c)
+int	ft_isspace(int c)
 {
 	return ((c & 0xFF) == 32 || ((c & 0xFF) >= 9 && (c & 0xFF) <= 13));
 }

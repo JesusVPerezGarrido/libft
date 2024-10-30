@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:05:10 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/10/30 11:16:49 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		ft_isprint(int c);
  *   these are: space, form-feed ('\f'), newline ('\n'), carriage
  *   return ('\r'), horizontal tab ('\t'), and vertical tab ('\v').
  */
-int ft_isspace(int c);
+int		ft_isspace(int c);
 
 //= Integer Functions =//
 
@@ -86,14 +86,14 @@ int ft_isspace(int c);
  * @param[in] a First integer.
  * @returns the highest of the two integers. 
  */
-int	ft_highest(int a, int b);
+int		ft_highest(int a, int b);
 
 /* Returnsthe lowest of two numbers.
  * @param[in] a First integer.
  * @param[in] a First integer.
  * @returns the lowest of the two integers. 
  */
-int	ft_lowest(int a, int b);
+int		ft_lowest(int a, int b);
 
 //= Basic String Functions =//
 
