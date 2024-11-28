@@ -6,21 +6,21 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:55:39 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/14 11:30:30 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:38:14 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_int.h"
 
-int	ft_printhex(int hex, int upp)
+ssize_t	ft_printhex(int hex, int upp, int fd)
 {
 	char	*str;
-	int		length;
+	ssize_t	length;
 
 	str = ft_hextoa(hex, upp);
 	if (!str)
 		return (-1);
-	length = ft_printstr(str);
+	length = ft_putstr_fd(str, fd);
 	free(str);
 	return (length);
 }

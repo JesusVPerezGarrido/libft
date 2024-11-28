@@ -29,6 +29,7 @@ FILES	:=	ft_atoi.c \
 			ft_putnbr_fd.c \
 			ft_strmapi.c \
 			ft_isprint.c \
+			ft_print_variadic.c \
 			ft_isspace.c \
 			ft_putstr_fd.c \
 			ft_strncmp.c \
@@ -40,12 +41,11 @@ FILES	:=	ft_atoi.c \
 			ft_strrchr.c \
 			get_next_line.c \
 			ft_hextoa.c \
-			ft_printchr.c \
 			ft_printf.c \
+			ft_fprintf.c \
 			ft_printhex.c \
 			ft_printnbr.c \
 			ft_printptr.c \
-			ft_printstr.c \
 			ft_ptrtoa.c \
 			ft_uitoa.c \
 			ft_freejoin.c \

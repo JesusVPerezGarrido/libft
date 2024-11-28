@@ -6,23 +6,23 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:11:44 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/14 11:30:30 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:34:27 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_int.h"
 
-int	ft_printptr(void *ptr)
+ssize_t	ft_printptr(void *ptr, int fd)
 {
 	char	*str;
-	int		length;
+	ssize_t	length;
 
 	if (!ptr)
-		return (ft_printstr("(nil)"));
+		return (ft_putstr_fd("(nil)", fd));
 	str = ft_ptrtoa(ptr);
 	if (!str)
 		return (-1);
-	length = ft_printstr(str);
+	length = ft_putstr_fd(str, fd);
 	free (str);
 	return (length);
 }

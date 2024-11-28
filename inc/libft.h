@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/30 11:16:49 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:17:46 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,35 +319,40 @@ void	*ft_calloc(size_t nmemb, size_t size);
 /*
  * Write formatted text into stdout.
  */
-int		ft_printf(char const *str, ...);
+ssize_t		ft_printf(char const *str, ...);
+
+/*
+ * Write formatted text into stdout.
+ */
+ssize_t		ft_fprintf(int fd, char const *str, ...);
 
 /*
  * Write a char to a file descriptor.
  * @param[in] c Character to write.
  * @param[in] fd File descriptor to write to.
  */
-void	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
 
 /*
  * Write a string to a file descriptor.
  * @param[in] s String to write.
  * @param[in] fd File descriptor to write to.
  */
-void	ft_putstr_fd(char *s, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
 
 /*
  * Write a string terminating it in a new line to a file descriptor.
  * @param[in] s String to write.
  * @param[in] fd File descriptor to write to.
  */
-void	ft_putendl_fd(char *s, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
 
 /*
  * Write a number to a file descriptor.
  * @param[in] n Number to write.
  * @param[in] fd File descriptor to write to.
  */
-void	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putnbr_fd(int n, int fd);
 
 //= CONVERSION FUNCTIONS =//
 
@@ -486,15 +491,5 @@ t_list	*ft_lstdetach(t_list **lst, t_list *node);
 char	*get_next_line(int fd);
 
 //= DEPRECATED, DO NOT USE =//
-
-int		ft_printchr(char c);
-int		ft_printstr(char *str);
-char	*ft_hextoa(unsigned int hex, int upp);
-char	*ft_ptrtoa(void *ptr);
-int		ft_printptr(void *ptr);
-int		ft_printnbr(int nbr);
-int		ft_printunbr(unsigned int nbr);
-char	*ft_uitoa(unsigned int n);
-int		ft_printhex(int hex, int upp);
 
 #endif

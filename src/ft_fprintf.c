@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchr.c                                      :+:      :+:    :+:   */
+/*   ft_fprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 10:05:54 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/14 11:30:30 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/11/28 13:02:47 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/11/28 13:59:15 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_int.h"
 
-int	ft_printchr(char c)
+ssize_t		ft_fprintf(int fd, char const *str, ...)
 {
-	return (write(1, &c, 1));
+	va_list lst;
+	ssize_t	length;
+
+	va_start(lst, str);
+	length = ft_print_variadic(str, lst, fd);
+	va_end(lst);
+	return (length);
 }
+

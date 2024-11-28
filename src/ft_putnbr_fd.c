@@ -3,28 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:44:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/13 18:04:51 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:00:14 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+ssize_t	ft_putnbr_fd(int n, int fd)
 {
+	ssize_t	length;
+	
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		length = ft_putstr_fd("-2147483648", fd);
+		return (length);
 	}
+	length = 0;
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		length += ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd(n % 10 + 48, fd);
+		length += ft_putnbr_fd(n / 10, fd);
+	length += ft_putchar_fd(n % 10 + '0', fd);
+	return (length);
 }

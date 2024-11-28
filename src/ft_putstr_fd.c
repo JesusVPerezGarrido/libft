@@ -3,23 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:39:52 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/13 16:35:49 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:33:18 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
 	int	index;
+	ssize_t	length;
 
+	if (!s)
+		return (ft_putstr_fd("(null)", fd));
 	index = 0;
+	length = 0;
 	while (s[index])
 	{
-		ft_putchar_fd(s[index], fd);
+		length += ft_putchar_fd(s[index], fd);
 		index++;
 	}
+	return (length);
 }

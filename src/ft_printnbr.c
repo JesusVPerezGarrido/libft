@@ -6,26 +6,26 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 10:44:20 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/14 11:30:30 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:46:34 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf_int.h"
 
-int	ft_printnbr(int nbr)
+ssize_t	ft_printnbr(int nbr, int fd)
 {
 	char	*str;
-	int		length;
+	ssize_t		length;
 
 	str = ft_itoa(nbr);
 	if (!str)
 		return (-1);
-	length = ft_printstr(str);
+	length = ft_putstr_fd(str, fd);
 	free(str);
 	return (length);
 }
 
-int	ft_printunbr(unsigned int nbr)
+ssize_t	ft_printunbr(unsigned int nbr, int fd)
 {
 	char	*str;
 	int		length;
@@ -33,7 +33,7 @@ int	ft_printunbr(unsigned int nbr)
 	str = ft_uitoa(nbr);
 	if (!str)
 		return (-1);
-	length = ft_printstr(str);
+	length = ft_putstr_fd(str, fd);
 	free(str);
 	return (length);
 }
