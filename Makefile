@@ -52,7 +52,12 @@ FILES	:=	ft_atoi.c \
 			ft_charcount.c \
 			ft_highest.c \
 			ft_lowest.c \
-			ft_lsttoar.c
+			ft_lsttoar.c \
+			ft_lstinsert.c \
+			ft_lstchr.c \
+			ft_lstrchr.c \
+			ft_pwr.c
+
 
 B_FILES	:=	ft_lstadd_back.c \
 			ft_lstdelone.c \
