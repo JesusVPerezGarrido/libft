@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:21:22 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/28 13:58:41 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:34:53 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ssize_t	ft_printf(char const *str, ...)
 {
-	va_list lst;
+	va_list	lst;
 	ssize_t	length;
 
 	va_start(lst, str);

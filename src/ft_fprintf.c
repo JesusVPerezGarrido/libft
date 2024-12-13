@@ -6,15 +6,15 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:02:47 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/28 13:59:15 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:35:23 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_int.h"
 
-ssize_t		ft_fprintf(int fd, char const *str, ...)
+ssize_t	ft_fprintf(int fd, char const *str, ...)
 {
-	va_list lst;
+	va_list	lst;
 	ssize_t	length;
 
 	va_start(lst, str);
@@ -22,4 +22,3 @@ ssize_t		ft_fprintf(int fd, char const *str, ...)
 	va_end(lst);
 	return (length);
 }
-

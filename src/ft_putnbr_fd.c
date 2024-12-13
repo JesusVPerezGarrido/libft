@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:44:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/28 14:00:14 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:34:44 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ssize_t	ft_putnbr_fd(int n, int fd)
 {
 	ssize_t	length;
-	
+
 	if (n == -2147483648)
 	{
 		length = ft_putstr_fd("-2147483648", fd);

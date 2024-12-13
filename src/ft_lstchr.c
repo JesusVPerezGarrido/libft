@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 18:39:52 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/12/13 11:34:41 by jeperez-         ###   ########.fr       */
+/*   Created: 2024/12/13 11:22:32 by jeperez-          #+#    #+#             */
+/*   Updated: 2024/12/13 11:41:06 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-ssize_t	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstchr(t_list **lst, void *data_ref, int (*cmp)(void *, void *))
 {
-	int		index;
-	ssize_t	length;
+	t_list	*node;
 
-	if (!s)
-		return (ft_putstr_fd("(null)", fd));
-	index = 0;
-	length = 0;
-	while (s[index])
+	if (!lst || !*lst)
+		return (NULL);
+	node = *lst;
+	while (node)
 	{
-		length += ft_putchar_fd(s[index], fd);
-		index++;
+		if (!cmp(node->content, data_ref))
+			return (node);
+		node = node->next;
 	}
-	return (length);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/11/28 13:17:46 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:38:42 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -319,12 +319,12 @@ void	*ft_calloc(size_t nmemb, size_t size);
 /*
  * Write formatted text into stdout.
  */
-ssize_t		ft_printf(char const *str, ...);
+ssize_t	ft_printf(char const *str, ...);
 
 /*
  * Write formatted text into stdout.
  */
-ssize_t		ft_fprintf(int fd, char const *str, ...);
+ssize_t	ft_fprintf(int fd, char const *str, ...);
 
 /*
  * Write a char to a file descriptor.
