@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:21:44 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/12/13 11:35:07 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 12:51:27 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ static ssize_t	print_format(const char *str, va_list arg_list, int fd)
 
 ssize_t	ft_print_variadic(const char *str, va_list arg_list, int fd)
 {
-	ssize_t		value;
-
 	if (write(1, 0, 0) == -1)
 		return (-1);
 	return (print_format(str, arg_list, fd));

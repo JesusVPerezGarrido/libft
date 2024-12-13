@@ -1,7 +1,7 @@
 NAME	:=	libft.a
 
 CC		:=	cc
-FLAGS	:=	-Wall -Werror -Wextra -g
+CFLAGS	:=	-Wall -Werror -Wextra -g
 
 FILES	:=	ft_atoi.c \
 			ft_memcmp.c \
@@ -56,10 +56,8 @@ FILES	:=	ft_atoi.c \
 			ft_lstinsert.c \
 			ft_lstchr.c \
 			ft_lstrchr.c \
-			ft_pwr.c
-
-
-B_FILES	:=	ft_lstadd_back.c \
+			ft_pwr.c \
+			ft_lstadd_back.c \
 			ft_lstdelone.c \
 			ft_lstnew.c \
 			ft_lstadd_front.c \
@@ -86,9 +84,9 @@ all: obj ${NAME}
 obj:
 	@mkdir -p obj
 
-${NAME}: ${OBJS} ${BONUS_OBJS}
+${NAME}: ${OBJS}
 	@echo "Creating: $(NAME)"
-	@ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
+	@ar rcs ${NAME} ${OBJS}
 
 obj/%.o: src/%.c
 	@echo "Compiling Compiling: $(notdir $<)"

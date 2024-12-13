@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/12/13 12:13:19 by jeperez-         ###   ########.fr       */
+/*   Updated: 2024/12/13 12:55:55 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -458,7 +458,7 @@ t_list	*ft_lstfirst(t_list *lst);
  * @param[in] cmp Function used to compare the content in the nodes.
  * @returns The first node that matches with the cmp function.
  */
-t_list	*ft_lstchr(t_list **lst, void *data_ref, int (*cmp)(void *, void *));
+t_list	*ft_lstchr(t_list *lst, void *data_ref, int (*cmp)(void *, void *));
 
 /* Search a node inside a list from the end and returns if cmp(node->content, data_ref) returns 0.
  * @param[in] lst Memory address of the start of the list from which to search in.
@@ -466,7 +466,7 @@ t_list	*ft_lstchr(t_list **lst, void *data_ref, int (*cmp)(void *, void *));
  * @param[in] cmp Function used to compare the content in the nodes.
  * @returns The last node that matches with the cmp function.
  */
-t_list	*ft_lstrchr(t_list **lst, void *data_ref, int (*cmp)(void *, void *));
+t_list	*ft_lstrchr(t_list *lst, void *data_ref, int (*cmp)(void *, void *));
 
 /*
  * Frees from memory a especific node.
