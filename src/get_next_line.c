@@ -6,33 +6,24 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:55:55 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/14 11:30:57 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:03:03 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*gnl_reduce(char *buffer)
+static void	gnl_reduce(char *buffer, char *storage)
 {
 	int		index;
-	int		v_index;
-	char	*value;
+	int		stg_index;
 
-	index = 0;
-	while (buffer[index] && buffer[index] != '\n')
+	index = 1;
+	while (buffer[index] && buffer[index - 1] != '\n')
 		index++;
-	if (!buffer[index])
-	{
-		free(buffer);
-		return (0);
-	}
-	value = ft_calloc((ft_strlen(buffer) - index + 1), sizeof(char));
-	index++;
-	v_index = 0;
+	stg_index = 0;
 	while (buffer[index])
-		value[v_index++] = buffer[index++];
-	free(buffer);
-	return (value);
+		storage[stg_index++] = buffer[index++];
+	storage[stg_index] = 0;
 }
 
 static char	*gnl_line(char *buffer)
@@ -40,12 +31,12 @@ static char	*gnl_line(char *buffer)
 	char	*value;
 	int		index;
 
-	index = 0;
-	if (!buffer[index])
-		return (0);
-	while (buffer[index] && buffer[index] != '\n')
+	index = 1;
+	while (buffer[index] && buffer[index - 1] != '\n')
 		index++;
-	value = ft_calloc(index + 2, sizeof(char));
+	value = ft_calloc(index + 1, sizeof(char));
+	if (!value)
+		return (NULL);
 	index = 0;
 	while (buffer[index] && buffer[index] != '\n')
 	{
@@ -53,59 +44,54 @@ static char	*gnl_line(char *buffer)
 		index++;
 	}
 	if (buffer[index] && buffer[index] == '\n')
-		value[index++] = '\n';
+		value[index] = '\n';
 	return (value);
 }
 
-static void	swapfree(char **dst, void *src)
+static char	*gnl_read(int fd, char *storage)
 {
-	free(*dst);
-	*dst = src;
-}
-
-static char	*gnl_read(int fd, char *res)
-{
-	char	*buffer;
+	char	*value;
+	char	buffer[BUFFER_SIZE + 1];
 	int		byte_read;
 
-	if (!res)
-		res = ft_calloc(1, 1);
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	value = ft_strdup(storage);
 	byte_read = 1;
 	while (byte_read > 0)
 	{
 		byte_read = read(fd, buffer, BUFFER_SIZE);
 		if (byte_read == -1)
 		{
-			free(res);
-			free(buffer);
-			return (0);
+			free(value);
+			return (NULL);
 		}
 		buffer[byte_read] = 0;
-		swapfree(&res, ft_strjoin(res, buffer));
+		value = ft_freejoin(value, buffer);
+		if (!value)
+			return (NULL);
 		if (ft_strchr(buffer, '\n'))
-			break ;
+			return (value);
 	}
-	free(buffer);
-	return (res);
+	return (value);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer[__FD_SETSIZE];
+	static char	buffer[__FD_SETSIZE][BUFFER_SIZE];
+	char		*read;
 	char		*value;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	read = gnl_read(fd, buffer[fd]);
+	if (!read)
+		return (0);
+	if (!read[0])
 	{
-		if (buffer[fd])
-			free(buffer[fd]);
-		buffer[fd] = NULL;
-		return (0);
+		free(read);
+		return (NULL);
 	}
-	buffer[fd] = gnl_read(fd, buffer[fd]);
-	if (!buffer[fd])
-		return (0);
-	value = gnl_line(buffer[fd]);
-	buffer[fd] = gnl_reduce(buffer[fd]);
+	value = gnl_line(read);
+	gnl_reduce(read, buffer[fd]);
+	free(read);
 	return (value);
 }

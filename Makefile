@@ -89,11 +89,11 @@ ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
 
 obj/%.o: src/%.c
-	@echo "Compiling Compiling: $(notdir $<)"
+	@echo "Compiling: $(notdir $<)"
 	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 clean:
-	@echo "Removing object files"
+	@echo "Removing: $(NAME:.a=) object files"
 	@rm -rf obj
 
 fclean: clean
