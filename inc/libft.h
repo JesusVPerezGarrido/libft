@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/01/09 12:52:16 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:13:59 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,12 +164,21 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
 /*
- * Compares two string up to a set length.
+ * Compares two strings.
+ * @param[in] s1 First string for the comparison.
+ * @param[in] s2 Second string for the comparison.
+ * @returns Difference in the ascii code of the first different character,
+ *   or 0 if both strings are equal.
+ */
+int		ft_strcmp(char *s1, char *s2);
+
+/*
+ * Compares two strings up to a set length.
  * @param[in] s1 First string for the comparison.
  * @param[in] s2 Second string for the comparison.
  * @param[in] n Number of bytes to compare.
  * @returns Difference in the ascii code of the first different character,
- *   or 0 if both strings are equal up to n bytes,
+ *   or 0 if both strings are equal up to n bytes.
  */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 

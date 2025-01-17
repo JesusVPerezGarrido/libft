@@ -8,6 +8,7 @@ FILES	:=	ft_atoi.c \
 			ft_strdup.c \
 			ft_strtrim.c \
 			ft_bzero.c \
+			ft_strcmp.c \
 			ft_memcpy.c \
 			ft_striteri.c \
 			ft_substr.c \
