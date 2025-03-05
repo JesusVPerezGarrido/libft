@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:37:38 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/19 14:57:15 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:21:33 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	l_len;
 	size_t	b_index;
 
+	if (!big)
+		return (NULL);
+	if (!little)
+		return (big);
 	l_len = ft_strlen(little);
 	if (l_len == 0)
 		return ((char *)big);

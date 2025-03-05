@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:13:10 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/12/13 11:19:20 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:31:04 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 t_list	*ft_lstinsert(t_list *node, t_list *insert)
 {
-	insert->next = node->next;
+	if (!node || !insert)
+		insert->next = node->next;
 	insert->prev = node;
 	if (node->next)
 		node->next->prev = insert;

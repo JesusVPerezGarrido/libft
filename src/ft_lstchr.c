@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:22:32 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/12/13 12:54:59 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 12:33:52 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstchr(t_list *lst, void *data_ref, int (*cmp)(void *, void *))
 {
 	t_list	*node;
 
-	if (!lst)
+	if (!lst || !cmp)
 		return (NULL);
 	node = lst;
 	while (node)

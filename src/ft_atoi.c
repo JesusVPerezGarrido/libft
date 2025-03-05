@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 18:23:28 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/18 13:28:19 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 12:28:10 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	ft_atoi(const char *nptr)
 	int	index;
 	int	sign;
 
+	if (!nptr)
+		return (0);
 	index = 0;
 	while (isspace(nptr[index]))
 		index++;

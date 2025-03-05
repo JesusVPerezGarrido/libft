@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:12:18 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/19 10:04:35 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:54:05 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	int		index;
 	char	mem_c;
 
-	while (c > 256)
-		c -= 256;
+	c = c & 0xFF;
 	index = 0;
 	while (n)
 	{
-		mem_c = ((unsigned char *)s)[index];
+		mem_c = ((t_byte *)s)[index];
 		if (mem_c == c)
-			return (&(((unsigned char *)s)[index]));
+			return (&(((t_byte *)s)[index]));
 		index++;
 		n--;
 	}

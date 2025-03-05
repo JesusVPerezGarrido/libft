@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 10:38:57 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/12 11:37:12 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:28:14 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,14 @@
 char	*ft_strdup(const char *s)
 {
 	char	*value;
-	int		index;
+	int		len;
 
-	value = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	value = ft_calloc(len + 1, sizeof(char));
 	if (!value)
 		return (0);
-	index = 0;
-	while (s[index])
-	{
-		value[index] = s[index];
-		index++;
-	}
-	value[index] = 0;
+	ft_strlcpy(value, s, len + 1);
 	return (value);
 }

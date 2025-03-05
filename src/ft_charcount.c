@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 13:56:39 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/10/17 13:58:12 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:31:24 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	ft_charcount(const char *str, char c)
 {
+	int	index;
 	int	count;
 
 	count = 0;
-	while (*str)
+	index = 0;
+	while (str[index])
 	{
-		if (*str == c)
+		if (str[index] == c)
 			count++;
-		str++;
+		index++;
 	}
 	return (count);
 }

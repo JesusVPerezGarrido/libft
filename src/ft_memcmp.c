@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:18:46 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/18 13:25:42 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 13:55:07 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,13 @@
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int				index;
-	unsigned char	c1;
-	unsigned char	c2;
 
 	index = 0;
-	while (n)
+	while (index < n)
 	{
-		c1 = ((unsigned char *)s1)[index];
-		c2 = ((unsigned char *)s2)[index];
-		if (c1 != c2)
-			return (c1 - c2);
+		if (((t_byte *)s1)[index] != ((t_byte *)s2)[index])
+			return (((t_byte *)s1)[index] - ((t_byte *)s2)[index]);
 		index++;
-		n--;
 	}
 	return (0);
 }

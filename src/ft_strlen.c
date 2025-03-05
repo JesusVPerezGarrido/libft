@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeperez- <jeperez-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:45:37 by jeperez-          #+#    #+#             */
-/*   Updated: 2024/09/11 16:45:03 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 14:11:56 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *c)
 {
 	size_t	value;
 
+	if (!c)
+		return (0);
 	value = 0;
 	while (c[value])
 		value++;
