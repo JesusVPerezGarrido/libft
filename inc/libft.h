@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:25 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/01/17 16:13:59 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/03/05 12:27:10 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -461,17 +461,19 @@ t_list	*ft_lstlast(t_list *lst);
  */
 t_list	*ft_lstfirst(t_list *lst);
 
-/* Search a node inside a list and returns if cmp(node->content, data_ref) returns 0.
- * @param[in] lst Memory address of the start of the list from which to search in.
- * @param[in] data_ref Value to compare to the content by cmp. if cmp does not need a seconds value can be set as NULL.
+/* Search a node inside a list and returns if cmp returns 0.
+ * @param[in] lst Memory address of the list to search in.
+ * @param[in] data_ref Value to compare to the content to.
+ *   if cmp does not need a seconds value can be set as NULL.
  * @param[in] cmp Function used to compare the content in the nodes.
  * @returns The first node that matches with the cmp function.
  */
 t_list	*ft_lstchr(t_list *lst, void *data_ref, int (*cmp)(void *, void *));
 
-/* Search a node inside a list from the end and returns if cmp(node->content, data_ref) returns 0.
- * @param[in] lst Memory address of the start of the list from which to search in.
- * @param[in] data_ref Value to compare to the content by cmp. if cmp does not need a seconds value can be set as NULL.
+/* Search a node inside a list from the end and returns if cmp returns 0.
+ * @param[in] lst Memory address of the list to search in.
+ * @param[in] data_ref Value to compare to the content by cmp.
+ *   if cmp does not need a seconds value can be set as NULL.
  * @param[in] cmp Function used to compare the content in the nodes.
  * @returns The last node that matches with the cmp function.
  */
