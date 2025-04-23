@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 19:37:38 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/03/05 14:21:33 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:36:42 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (!big)
 		return (NULL);
 	if (!little)
-		return (big);
+		return ((char *)big);
 	l_len = ft_strlen(little);
 	if (l_len == 0)
 		return ((char *)big);

@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 16:18:37 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/03/05 14:08:33 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:36:26 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	index;
+	size_t	index;
 
 	index = 0;
 	while (index < n)

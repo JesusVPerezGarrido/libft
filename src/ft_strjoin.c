@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 11:26:27 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/03/05 14:30:20 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:35:36 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*value;
 	int		length;
-	int		s2_len;
 
 	if (!s1 || !s2)
 		return (NULL);

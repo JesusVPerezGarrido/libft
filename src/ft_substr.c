@@ -6,7 +6,7 @@
 /*   By: jeperez- <jeperez-@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 11:10:38 by jeperez-          #+#    #+#             */
-/*   Updated: 2025/03/05 14:26:10 by jeperez-         ###   ########.fr       */
+/*   Updated: 2025/04/23 14:35:31 by jeperez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*value;
-	int				index;
 	unsigned int	sub_len;
 
 	if (!s)
